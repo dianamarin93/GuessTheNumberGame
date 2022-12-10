@@ -14,6 +14,7 @@ namespace GuessTheNumberGame
             int hiddenNumber = rnd.Next(100);
             int counter = 0;
             int lives = 7;
+            int easterEgg = -1;
 
             Console.BackgroundColor = ConsoleColor.White;
             Console.Clear();
@@ -25,6 +26,12 @@ namespace GuessTheNumberGame
                 Console.ForegroundColor = ConsoleColor.Black;
 
                 int number = Convert.ToInt32(Console.ReadLine());
+
+                if (number == -1)
+                {
+                    lives += 3;
+                    Console.WriteLine("You found an EasterEgg and you received 3 extra lives");
+                }
 
                 counter++;
 
@@ -39,6 +46,7 @@ namespace GuessTheNumberGame
                     Console.ForegroundColor = ConsoleColor.Magenta;
                     Console.WriteLine("Less!");
                     lives--;
+
                 }
                 else
                 {
@@ -49,9 +57,6 @@ namespace GuessTheNumberGame
             }
             Console.WriteLine("Press any key to close the console");
             Console.ReadKey();
-
-
-            
         }
     }
 }
