@@ -10,10 +10,10 @@ namespace GuessTheNumberGame
     {
         static void Main(string[] args)
         {
-            play_Game();
+            Play_Game();
         }
 
-        public static void play_Game()
+        public static void Play_Game()
         {
             Random rnd = new Random();
             int hiddenNumber = rnd.Next(100);
