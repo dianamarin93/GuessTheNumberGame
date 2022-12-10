@@ -10,6 +10,11 @@ namespace GuessTheNumberGame
     {
         static void Main(string[] args)
         {
+            play_Game();
+        }
+
+        public static void play_Game()
+        {
             Random rnd = new Random();
             int hiddenNumber = rnd.Next(100);
             int counter = 0;
@@ -41,7 +46,7 @@ namespace GuessTheNumberGame
                     Console.WriteLine("More! ");
                     lives--;
                 }
-                else if(number > hiddenNumber)
+                else if (number > hiddenNumber)
                 {
                     Console.ForegroundColor = ConsoleColor.Magenta;
                     Console.WriteLine("Less!");
